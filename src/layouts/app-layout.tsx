@@ -1,6 +1,7 @@
 import { Link, Outlet } from "@tanstack/react-router";
 import { useCart } from "../core/cart/cart-context";
 import { CartProvider } from "../core/cart/cart-provider";
+import { formatBags } from "../common/format";
 
 function CartBadge() {
   const { cart } = useCart();
@@ -9,7 +10,7 @@ function CartBadge() {
       aria-live="polite"
       className="rounded-full border border-amber-200 bg-white px-3 py-1 text-sm font-semibold text-amber-900"
     >
-      🛍️ {cart.length} {cart.length === 1 ? "bolsa" : "bolsas"}
+      🛍️ {formatBags(cart.length)}
     </p>
   );
 }

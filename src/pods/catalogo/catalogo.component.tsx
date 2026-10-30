@@ -1,13 +1,20 @@
 import { useRef } from "react";
-import type { Coffee } from "../../core/coffees/model";
-import { formatPrice } from "../../common/format";
+import {
+  roastLabels,
+  type Coffee,
+  type Roast,
+} from "../../core/coffees/model";
+import { formatBags, formatPrice } from "../../common/format";
 import { CoffeeCard } from "./components/coffee-card";
+import type { CatalogoFilters } from "./catalogo.vm";
+
+const roasts = Object.keys(roastLabels) as Roast[];
 
 interface Props {
   coffees: Coffee[];
   totalCoffees: number;
-  search: string;
-  onSearchChange: (value: string) => void;
+  filters: CatalogoFilters;
+  onFiltersChange: (filters: CatalogoFilters) => void;
   cartCount: number;
   cartTotal: number;
   onAdd: (coffee: Coffee) => void;
@@ -17,8 +24,8 @@ interface Props {
 export function CatalogoComponent({
   coffees,
   totalCoffees,
-  search,
-  onSearchChange,
+  filters,
+  onFiltersChange,
   cartCount,
   cartTotal,
   onAdd,
@@ -38,22 +45,46 @@ export function CatalogoComponent({
         className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-amber-200 bg-amber-50 p-4"
       >
         <p aria-live="polite" className="font-semibold">
-          {cartCount} bolsas · {formatPrice(cartTotal)}
+          {formatBags(cartCount)} · {formatPrice(cartTotal)}
         </p>
         <button onClick={onClearCart} disabled={cartCount === 0}>
           Vaciar
         </button>
       </section>
 
-      <div className="grid gap-1">
-        <label htmlFor="search">Buscar por nombre</label>
-        <input
-          id="search"
-          ref={searchRef}
-          placeholder="Por ejemplo, Kenia"
-          value={search}
-          onChange={(event) => onSearchChange(event.target.value)}
-        />
+      <div className="grid gap-3 sm:grid-cols-[2fr_1fr]">
+        <div className="grid gap-1">
+          <label htmlFor="search">Buscar por nombre</label>
+          <input
+            id="search"
+            ref={searchRef}
+            placeholder="Por ejemplo, Kenia"
+            value={filters.q ?? ""}
+            onChange={(event) =>
+              onFiltersChange({ ...filters, q: event.target.value || undefined })
+            }
+          />
+        </div>
+        <div className="grid gap-1">
+          <label htmlFor="roast">Tueste</label>
+          <select
+            id="roast"
+            value={filters.roast ?? ""}
+            onChange={(event) =>
+              onFiltersChange({
+                ...filters,
+                roast: (event.target.value || undefined) as Roast | undefined,
+              })
+            }
+          >
+            <option value="">Todos</option>
+            {roasts.map((roast) => (
+              <option key={roast} value={roast}>
+                {roastLabels[roast]}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
 
       {coffees.length === 0 ? (

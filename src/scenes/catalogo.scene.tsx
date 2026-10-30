@@ -1,9 +1,15 @@
 import { useState } from "react";
 import { OfferCountdown } from "../common/components/offer-countdown";
-import { CatalogoContainer } from "../pods/catalogo";
+import { useNavigate } from "@tanstack/react-router";
+import { CatalogoContainer, type CatalogoFilters } from "../pods/catalogo";
 
-export function CatalogoScene() {
+export function CatalogoScene({ filters }: { filters: CatalogoFilters }) {
   const [showOffer, setShowOffer] = useState(true);
+  const navigate = useNavigate({ from: "/coffees/" });
+
+  function onFiltersChange(next: CatalogoFilters) {
+    void navigate({ search: next, replace: true });
+  }
 
   return (
     <>
@@ -22,7 +28,7 @@ export function CatalogoScene() {
           {showOffer ? "Ocultar oferta" : "Mostrar oferta"}
         </button>
       </aside>
-      <CatalogoContainer />
+      <CatalogoContainer filters={filters} onFiltersChange={onFiltersChange} />
     </>
   );
 }
