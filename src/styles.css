@@ -9,4 +9,6 @@
   button { @apply cursor-pointer rounded-xl bg-amber-800 px-4 py-2 text-sm font-semibold text-white hover:bg-amber-900 disabled:cursor-not-allowed disabled:opacity-50; }
   a { @apply font-medium text-amber-800 underline-offset-4 hover:underline; }
   button, input, select, textarea, a { @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700; }
+  [role="alert"] { @apply rounded-lg border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-800; }
+  [role="status"] { @apply rounded-lg bg-amber-50 px-4 py-3 text-sm text-amber-900; }
 }

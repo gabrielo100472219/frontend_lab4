@@ -1,32 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Coffee } from "./model";
-
-const coffees: Coffee[] = [
-  {
-    id: 1,
-    name: "Etiopía Yirgacheffe",
-    origin: "Etiopía",
-    roast: "light",
-    price: 14.9,
-    notes: "Floral, bergamota y té negro.",
-  },
-  {
-    id: 2,
-    name: "Colombia Huila",
-    origin: "Colombia",
-    roast: "medium",
-    price: 12.9,
-    notes: "Caramelo y manzana roja.",
-  },
-  {
-    id: 3,
-    name: "Kenia AA",
-    origin: "Kenia",
-    roast: "light",
-    price: 15.5,
-    notes: "Frutos rojos y pomelo.",
-  },
-];
 
 function CoffeeCard({
   coffee,
@@ -56,8 +29,34 @@ function CoffeeCard({
 }
 
 export function App() {
+  const [coffees, setCoffees] = useState<Coffee[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
   const [cart, setCart] = useState<Coffee[]>([]);
   const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    fetch("/coffees.json", { signal: controller.signal })
+      .then((response) => {
+        if (!response.ok) throw new Error("No se ha podido cargar el catálogo.");
+        return response.json() as Promise<Coffee[]>;
+      })
+      .then((data) => {
+        if (!controller.signal.aborted) setCoffees(data);
+      })
+      .catch(() => {
+        if (!controller.signal.aborted) {
+          setError("No se ha podido cargar el catálogo.");
+        }
+      })
+      .finally(() => {
+        if (!controller.signal.aborted) setLoading(false);
+      });
+
+    return () => controller.abort();
+  }, []);
 
   const addToCart = (coffee: Coffee) => {
     setCart((previous) => [...previous, coffee]);
@@ -71,7 +70,9 @@ export function App() {
   return (
     <main>
       <h1>Tueste · Catálogo</h1>
-      <p className="text-stone-600">{coffees.length} cafés este mes</p>
+      {!loading && !error && (
+        <p className="text-stone-600">{coffees.length} cafés este mes</p>
+      )}
 
       <section
         aria-label="Carrito"
@@ -95,7 +96,11 @@ export function App() {
         />
       </div>
 
-      {visible.length === 0 ? (
+      {loading ? (
+        <p role="status">Cargando…</p>
+      ) : error ? (
+        <p role="alert">{error}</p>
+      ) : visible.length === 0 ? (
         <p className="rounded-2xl border border-dashed border-stone-300 p-8 text-center text-stone-500">
           Sin resultados
         </p>
