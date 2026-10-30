@@ -219,7 +219,7 @@ La aplicación entera, commit a commit: de O1 (tarjetas a mano) a O7 (pods y esc
 
 #### Qué corregí y por qué
 
-Las comprobaciones en el navegador sacaron varios fallos de la primera versión de cada paso. Los de abajo son los que tuvieron que arreglarse.
+Al comprobar el formulario en el navegador salió un fallo de la primera versión; lo cuento justo debajo.
 
 ### Dentro del prompt principal: los errores del formulario salían duplicados
 
@@ -235,36 +235,30 @@ El formulario de la demo adaptado, validando con el esquema en `onChange` y en `
 
 `field.state.meta.errors` junta los errores de los dos validadores y, como los dos usan el mismo esquema, el mensaje aparece dos veces. Los mensajes se pasan por un `Set` antes de pintarlos.
 
-### Dentro del prompt principal: «0 cafés este mes» mientras cargaba
+### Entender la sintaxis de los componentes de `app.tsx`
 
 #### Prompt
 
-(El mismo. O3: comprobar «Cargando…» con la petición lenta.)
+> «Explícame la sintaxis de los componentes de `app.tsx`.» (Con el commit de O2 sacado, para repasarlo paso a paso.)
 
 #### Qué me dio
 
-La frase del número de cafés se pintaba siempre, así que mientras cargaba (y si fallaba) decía «0 cafés este mes» encima de «Cargando…».
+Un recorrido línea a línea del fichero: `import type` (sólo tipos, desaparece al compilar), el array `coffees` fuera del componente para que no se cree en cada render, la firma de `CoffeeCard` (desestructurar las props y tiparlas en la misma línea, con `onAdd: (coffee: Coffee) => void` como tipo de función), las llaves `{ }` para meter expresiones en el JSX, `className` y `htmlFor` porque `class` y `for` son palabras reservadas, el genérico de `useState<Coffee[]>([])` (sin él, `[]` se infiere como `never[]`), el spread en `setCart(previous => [...previous, coffee])`, `reduce` y `filter` como datos derivados, el ternario para «Sin resultados» y el `map` con su `key`.
 
 #### Qué corregí y por qué
 
-Cero no es lo mismo que «todavía no lo sé». La frase sólo se pinta cuando ya hay datos. En los pods quedó resuelto por el orden del container: los `return` de carga y error van antes de pintar el component.
+En el código, nada: era una explicación. Me sirvió para separar lo que es sintaxis de JavaScript (desestructuración, spread, arrow functions, ternario) de lo que es de React (JSX, props, `useState`, `key`) y de lo que es de TypeScript (`import type`, el tipo de las props, el genérico). Lo que más me aclaró: `onAdd={addToCart}` pasa la función y `onClick={() => onAdd(coffee)}` crea una función nueva porque hay que pasarle el café de esa tarjeta.
 
-### Dentro del prompt principal: detalles de acabado y accesibilidad
+### Pregunta sobre O5: ¿para qué sirve `key={id}` en el detalle?
 
 #### Prompt
 
-(El mismo. Repaso del árbol de accesibilidad y de las capturas.)
+> «En la escena del detalle pones `<DetalleContainer key={id} id={id} />`. Si `useCoffee` ya tiene `[id]` en las dependencias del efecto y vuelve a pedir el café cuando cambia, ¿para qué hace falta la `key`?»
 
 #### Qué me dio
 
-- Tres botones iguales «Añadir al carrito», que un lector de pantalla no distingue.
-- El campo de precio con `min="0"` y sin `max`: el árbol de accesibilidad anunciaba un máximo de 0.
-- «1 bolsas».
-- El enlace «Volver al catálogo» pegado a la tarjeta del detalle.
+Sin `key`, al pasar de `/coffees/3` a `/coffees/4` el router no desmonta nada: React reutiliza la misma instancia de `DetalleContainer` y sólo le cambia la prop `id`. El efecto se ejecuta **después** del render, así que el primer render con `id = "4"` todavía tiene en el estado el café 3 y `loading = false`: durante ese instante la URL dice 4 y la pantalla enseña el 3. Después el efecto limpia la petición anterior (`abort()`), pone `loading` a `true` y pide el 4. Con `key={id}`, al cambiar la `key` React desmonta la instancia vieja y monta una nueva, que empieza con su estado inicial (`loading = true`, sin café). Nunca se pinta el café equivocado. Es lo que explica la sesión 3: «al pasar de una persona a otra, esa clave cambia y React monta una nueva instancia».
 
 #### Qué corregí y por qué
 
-- Cada botón lleva `aria-label="Añadir Kenia AA al carrito"`.
-- `max="200"` en el input, el mismo máximo que el esquema.
-- Un `formatBags` en `common/format.ts` para el singular, usado en el resumen y en la cabecera.
-- El enlace va dentro de un `<p>`: un `<a>` suelto es un elemento en línea y no recibe el margen vertical de `space-y` del `main`.
+Nada en el código. Corregí la idea que tenía de la `key`: no es sólo para las listas del `map`. Sirve en cualquier componente para decirle a React «esto es otra cosa, empieza de cero». Por la misma razón, `EdicionScene` pone `key={id}` en `EdicionContainer`: si cambiara el café, el formulario no se quedaría con los valores del anterior.
