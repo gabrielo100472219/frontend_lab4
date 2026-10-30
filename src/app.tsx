@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import type { Coffee } from "./model";
+import { useCoffees } from "./use-coffees";
 
 function CoffeeCard({
   coffee,
@@ -29,34 +30,10 @@ function CoffeeCard({
 }
 
 export function App() {
-  const [coffees, setCoffees] = useState<Coffee[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+  const { coffees, loading, error } = useCoffees();
   const [cart, setCart] = useState<Coffee[]>([]);
   const [search, setSearch] = useState("");
-
-  useEffect(() => {
-    const controller = new AbortController();
-
-    fetch("/coffees.json", { signal: controller.signal })
-      .then((response) => {
-        if (!response.ok) throw new Error("No se ha podido cargar el catálogo.");
-        return response.json() as Promise<Coffee[]>;
-      })
-      .then((data) => {
-        if (!controller.signal.aborted) setCoffees(data);
-      })
-      .catch(() => {
-        if (!controller.signal.aborted) {
-          setError("No se ha podido cargar el catálogo.");
-        }
-      })
-      .finally(() => {
-        if (!controller.signal.aborted) setLoading(false);
-      });
-
-    return () => controller.abort();
-  }, []);
+  const searchRef = useRef<HTMLInputElement>(null);
 
   const addToCart = (coffee: Coffee) => {
     setCart((previous) => [...previous, coffee]);
@@ -69,7 +46,10 @@ export function App() {
 
   return (
     <main>
-      <h1>Tueste · Catálogo</h1>
+      <header className="flex flex-wrap items-center justify-between gap-3">
+        <h1>Tueste · Catálogo</h1>
+        <button onClick={() => searchRef.current?.focus()}>Buscar</button>
+      </header>
       {!loading && !error && (
         <p className="text-stone-600">{coffees.length} cafés este mes</p>
       )}
@@ -90,6 +70,7 @@ export function App() {
         <label htmlFor="search">Buscar por nombre</label>
         <input
           id="search"
+          ref={searchRef}
           placeholder="Por ejemplo, Kenia"
           value={search}
           onChange={(event) => setSearch(event.target.value)}
