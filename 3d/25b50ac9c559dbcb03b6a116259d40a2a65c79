@@ -1,0 +1,21 @@
+src/app.tsx
+  s_b4d76b4572d43a::t_03f72e14a8a0ca 1,3,33,36,49-52,73
+src/use-coffees.ts
+  s_b4d76b4572d43a::t_b38a8a55168613 1-33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "3d25b50ac9c559dbcb03b6a116259d40a2a65c79",
+  "prompts": {},
+  "sessions": {
+    "s_b4d76b4572d43a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "efd93bcb-6dc2-473a-b6c2-a47855ed21f1",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Gabriel Ortega <gabrielon@ext.inditex.com>"
+    }
+  }
+}
