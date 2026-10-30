@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CoffeesIndexRouteImport } from './routes/coffees/index'
 import { Route as CoffeesNewRouteImport } from './routes/coffees/new'
+import { Route as ExperimentosMemoRouteImport } from './routes/experimentos/memo'
 import { Route as CoffeesCoffeeIdIndexRouteImport } from './routes/coffees/$coffeeId/index'
 import { Route as CoffeesCoffeeIdEditRouteImport } from './routes/coffees/$coffeeId/edit'
 
@@ -30,6 +31,11 @@ const CoffeesNewRoute = CoffeesNewRouteImport.update({
   path: '/coffees/new',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExperimentosMemoRoute = ExperimentosMemoRouteImport.update({
+  id: '/experimentos/memo',
+  path: '/experimentos/memo',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CoffeesCoffeeIdIndexRoute = CoffeesCoffeeIdIndexRouteImport.update({
   id: '/coffees/$coffeeId/',
   path: '/coffees/$coffeeId/',
@@ -44,6 +50,7 @@ const CoffeesCoffeeIdEditRoute = CoffeesCoffeeIdEditRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/coffees/new': typeof CoffeesNewRoute
+  '/experimentos/memo': typeof ExperimentosMemoRoute
   '/coffees/': typeof CoffeesIndexRoute
   '/coffees/$coffeeId/edit': typeof CoffeesCoffeeIdEditRoute
   '/coffees/$coffeeId/': typeof CoffeesCoffeeIdIndexRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/coffees/new': typeof CoffeesNewRoute
+  '/experimentos/memo': typeof ExperimentosMemoRoute
   '/coffees': typeof CoffeesIndexRoute
   '/coffees/$coffeeId/edit': typeof CoffeesCoffeeIdEditRoute
   '/coffees/$coffeeId': typeof CoffeesCoffeeIdIndexRoute
@@ -59,6 +67,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/coffees/new': typeof CoffeesNewRoute
+  '/experimentos/memo': typeof ExperimentosMemoRoute
   '/coffees/': typeof CoffeesIndexRoute
   '/coffees/$coffeeId/edit': typeof CoffeesCoffeeIdEditRoute
   '/coffees/$coffeeId/': typeof CoffeesCoffeeIdIndexRoute
@@ -68,6 +77,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/coffees/new'
+    | '/experimentos/memo'
     | '/coffees/'
     | '/coffees/$coffeeId/edit'
     | '/coffees/$coffeeId/'
@@ -75,6 +85,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/coffees/new'
+    | '/experimentos/memo'
     | '/coffees'
     | '/coffees/$coffeeId/edit'
     | '/coffees/$coffeeId'
@@ -82,6 +93,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/coffees/new'
+    | '/experimentos/memo'
     | '/coffees/'
     | '/coffees/$coffeeId/edit'
     | '/coffees/$coffeeId/'
@@ -90,6 +102,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CoffeesNewRoute: typeof CoffeesNewRoute
+  ExperimentosMemoRoute: typeof ExperimentosMemoRoute
   CoffeesIndexRoute: typeof CoffeesIndexRoute
   CoffeesCoffeeIdEditRoute: typeof CoffeesCoffeeIdEditRoute
   CoffeesCoffeeIdIndexRoute: typeof CoffeesCoffeeIdIndexRoute
@@ -118,6 +131,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CoffeesNewRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/experimentos/memo': {
+      id: '/experimentos/memo'
+      path: '/experimentos/memo'
+      fullPath: '/experimentos/memo'
+      preLoaderRoute: typeof ExperimentosMemoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/coffees/$coffeeId/': {
       id: '/coffees/$coffeeId/'
       path: '/coffees/$coffeeId'
@@ -138,6 +158,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CoffeesNewRoute: CoffeesNewRoute,
+  ExperimentosMemoRoute: ExperimentosMemoRoute,
   CoffeesIndexRoute: CoffeesIndexRoute,
   CoffeesCoffeeIdEditRoute: CoffeesCoffeeIdEditRoute,
   CoffeesCoffeeIdIndexRoute: CoffeesCoffeeIdIndexRoute,

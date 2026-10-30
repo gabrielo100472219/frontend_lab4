@@ -33,7 +33,8 @@ export function AppLayout() {
         </header>
         <Outlet />
         <footer className="border-t border-stone-200 pt-6 text-xs text-stone-500">
-          Datos de ejemplo. Los cambios se guardan solo en este navegador.
+          Datos de ejemplo. Los cambios se guardan solo en este navegador. ·{" "}
+          <Link to="/experimentos/memo">Experimento useMemo</Link>
         </footer>
       </main>
     </CartProvider>
