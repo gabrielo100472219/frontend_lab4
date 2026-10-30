@@ -10,7 +10,9 @@ export function DetalleScene({ id }: { id: string }) {
 
   return (
     <>
-      <Link to="/coffees">← Volver al catálogo</Link>
+      <p>
+        <Link to="/coffees">← Volver al catálogo</Link>
+      </p>
       <DetalleContainer key={id} id={id} onDeleted={onDeleted} />
     </>
   );

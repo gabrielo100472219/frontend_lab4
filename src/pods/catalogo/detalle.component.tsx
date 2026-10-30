@@ -50,7 +50,7 @@ export function DetalleComponent({ coffee, onDelete }: Props) {
       </div>
       <div className="flex flex-wrap items-center gap-3">
         <Link
-          className="inline-flex rounded-xl bg-amber-100 px-4 py-2 no-underline"
+          className="inline-flex rounded-xl bg-amber-100 px-4 py-2 text-sm font-semibold no-underline hover:bg-amber-200"
           to="/coffees/$coffeeId/edit"
           params={{ coffeeId: String(coffee.id) }}
         >
