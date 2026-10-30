@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import type { Coffee } from "../../../core/coffees/model";
 import { formatPrice } from "../../../common/format";
+import styles from "./coffee-card.module.css";
 
 interface Props {
   coffee: Coffee;
@@ -9,20 +10,18 @@ interface Props {
 
 export function CoffeeCard({ coffee, onAdd }: Props) {
   return (
-    <li className="flex flex-col gap-3 rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
+    <li className={styles.card}>
       <div>
-        <h2>
+        <h2 className={styles.name}>
           <Link to="/coffees/$coffeeId" params={{ coffeeId: String(coffee.id) }}>
             {coffee.name}
           </Link>
         </h2>
-        <p className="text-sm text-stone-500">{coffee.origin}</p>
+        <p className={styles.origin}>{coffee.origin}</p>
       </div>
-      <p className="text-lg font-semibold text-amber-900">
-        {formatPrice(coffee.price)}
-      </p>
+      <p className={styles.price}>{formatPrice(coffee.price)}</p>
       <button
-        className="self-start"
+        className={styles.add}
         aria-label={`Añadir ${coffee.name} al carrito`}
         onClick={() => onAdd(coffee)}
       >
