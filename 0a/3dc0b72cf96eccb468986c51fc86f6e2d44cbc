@@ -1,0 +1,45 @@
+package-lock.json
+  s_b4d76b4572d43a::t_45f8e2fbb7dcab 9,16,24-263,858-1051,1442-1561,1569-1586,1597-1613,1628-1637,1671-1680,1688-1696,1707-1739,2001-2010,2021-2027,2047-2063,2113-2128,2150-2163,2204-2234,2317-2416,2755-2778
+package.json
+  s_b4d76b4572d43a::t_e087ea5f31c596 7,12,14-15,19,21-24
+src/api.ts
+  s_b4d76b4572d43a::t_976ebe4226a1db 1-16
+src/app.tsx
+  s_b4d76b4572d43a::t_f34ef7aef91409 1-2,4-9,13
+src/hooks.ts
+  s_b4d76b4572d43a::t_6194efa2898e1e 2,13,31-60
+src/model.ts
+  s_b4d76b4572d43a::t_62e2584222a238 13-18
+src/routeTree.gen.ts
+  s_b4d76b4572d43a::t_820ade0362dedd 1-95
+src/routes/__root.tsx
+  s_b4d76b4572d43a::t_37c7871cfbb083 1-24
+src/routes/coffees/$coffeeId.tsx
+  s_b4d76b4572d43a::t_471ec5670f0f2f 1-11
+src/routes/coffees/index.tsx
+  s_b4d76b4572d43a::t_8a64b42dffd453 1-6
+src/routes/index.tsx
+  s_b4d76b4572d43a::t_3f6be2885c920c 1-5
+src/screens.tsx
+  s_b4d76b4572d43a::t_2ac23c4ae8826e 1-144
+src/styles.css
+  s_b4d76b4572d43a::t_7d6685f264e4a8 14-15
+vite.config.ts
+  s_b4d76b4572d43a::t_6e563c24ee7710 4,7-11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "0a3dc0b72cf96eccb468986c51fc86f6e2d44cbc",
+  "prompts": {},
+  "sessions": {
+    "s_b4d76b4572d43a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "efd93bcb-6dc2-473a-b6c2-a47855ed21f1",
+        "model": "unknown"
+      },
+      "human_author": "Gabriel Ortega <gabrielon@ext.inditex.com>"
+    }
+  }
+}
