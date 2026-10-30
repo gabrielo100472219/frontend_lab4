@@ -1,0 +1,25 @@
+src/core/coffees/api.ts
+  s_b4d76b4572d43a::t_cc8671eb738f8e 5-6,14-19,26,51-53,60-66
+src/pods/catalogo/detalle.component.tsx
+  s_b4d76b4572d43a::t_60593b2ee9b4dc 1,6-26,51-94
+src/pods/catalogo/detalle.container.tsx
+  s_b4d76b4572d43a::t_85fad52abcd17d 1,6-11,17-25
+src/scenes/detalle.scene.tsx
+  s_b4d76b4572d43a::t_7e242a795b14d8 1,5-10,14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "3b222434e2960f2ee14f18310b11c2cd30b0da2c",
+  "prompts": {},
+  "sessions": {
+    "s_b4d76b4572d43a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "efd93bcb-6dc2-473a-b6c2-a47855ed21f1",
+        "model": "unknown"
+      },
+      "human_author": "Gabriel Ortega <gabrielon@ext.inditex.com>"
+    }
+  }
+}
