@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { useForm } from "@tanstack/react-form";
-import { coffeeSchema } from "./coffee.schema";
-import { roastLabels, type CoffeeInput, type Roast } from "./model";
+import { coffeeSchema } from "../../core/coffees/coffee.schema";
+import {
+  roastLabels,
+  type CoffeeInput,
+  type Roast,
+} from "../../core/coffees/model";
 
 interface Props {
   initialValues?: CoffeeInput;
@@ -41,7 +45,7 @@ function FieldError({ name, meta }: { name: string; meta: FieldMeta }) {
 const errorId = (name: string, meta: FieldMeta) =>
   isInvalid(meta) ? `${name}-error` : undefined;
 
-export function CoffeeForm({ initialValues = emptyValues, onSave }: Props) {
+export function EdicionComponent({ initialValues = emptyValues, onSave }: Props) {
   const [saveError, setSaveError] = useState("");
   const form = useForm({
     defaultValues: initialValues,

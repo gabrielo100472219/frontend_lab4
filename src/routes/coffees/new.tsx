@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { NewCoffee } from "../../screens";
+import { EdicionScene } from "../../scenes/edicion.scene";
 
 export const Route = createFileRoute("/coffees/new")({
-  component: NewCoffee,
+  component: () => <EdicionScene />,
 });
