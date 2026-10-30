@@ -1,0 +1,37 @@
+package-lock.json
+  s_b4d76b4572d43a::t_b99082a777c8e1 9,13-14,860-890,904-938
+package.json
+  s_b4d76b4572d43a::t_4c4d1809156dd5 12,16-17
+src/api.ts
+  s_b4d76b4572d43a::t_812810b04e2ab3 1-10,15-18,29-51
+src/coffee-form.tsx
+  s_b4d76b4572d43a::t_90c9a8820fe173 1-184
+src/coffee.schema.ts
+  s_b4d76b4572d43a::t_03ed1114b1f10e 1-20
+src/routeTree.gen.ts
+  s_b4d76b4572d43a::t_4f47493bde2ea3 15,32-36,41,47,54,59,61-62,68,95-101,108
+src/routes/__root.tsx
+  s_b4d76b4572d43a::t_82d43da645db83 14
+src/routes/coffees/new.tsx
+  s_b4d76b4572d43a::t_9f7147aeaca55a 1-6
+src/screens.tsx
+  s_b4d76b4572d43a::t_9417fde32f0ecb 2-4,147-168
+src/styles.css
+  s_b4d76b4572d43a::t_b2a6ba220a308b 16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "7d8d6a4ed4b84b81304642a7cd83d0774b6b333a",
+  "prompts": {},
+  "sessions": {
+    "s_b4d76b4572d43a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "efd93bcb-6dc2-473a-b6c2-a47855ed21f1",
+        "model": "unknown"
+      },
+      "human_author": "Gabriel Ortega <gabrielon@ext.inditex.com>"
+    }
+  }
+}
