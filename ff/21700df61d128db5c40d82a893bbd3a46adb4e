@@ -1,0 +1,25 @@
+src/experiments/memo-lab.tsx
+  s_b4d76b4572d43a::t_c9d8ae82844704 1-121
+src/layouts/app-layout.tsx
+  s_b4d76b4572d43a::t_12cefbfcba7b3f 36-37
+src/routeTree.gen.ts
+  s_b4d76b4572d43a::t_8b457d898c4722 15,34-38,53,61,70,80,88,96,105,134-140,161
+src/routes/experimentos/memo.tsx
+  s_b4d76b4572d43a::t_58c83400c67376 1-6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "ff21700df61d128db5c40d82a893bbd3a46adb4e",
+  "prompts": {},
+  "sessions": {
+    "s_b4d76b4572d43a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "efd93bcb-6dc2-473a-b6c2-a47855ed21f1",
+        "model": "unknown"
+      },
+      "human_author": "Gabriel Ortega <gabrielon@ext.inditex.com>"
+    }
+  }
+}
