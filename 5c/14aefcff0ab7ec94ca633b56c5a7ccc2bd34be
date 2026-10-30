@@ -1,0 +1,33 @@
+src/common/format.ts
+  s_b4d76b4572d43a::t_a8b2c1fd46ff25 2-4
+src/layouts/app-layout.tsx
+  s_b4d76b4572d43a::t_4790cf554c5c25 4,13
+src/pods/catalogo/catalogo.component.tsx
+  s_b4d76b4572d43a::t_0c518ddd6eb262 2-7,9-11,16-17,27-28,48,55-87
+src/pods/catalogo/catalogo.container.tsx
+  s_b4d76b4572d43a::t_a81df74fb0556c 5,7-12,19-23,31-32
+src/pods/catalogo/catalogo.vm.ts
+  s_b4d76b4572d43a::t_24aa30fcf9cf55 1-6
+src/pods/catalogo/index.ts
+  s_b4d76b4572d43a::t_bd8770837fea8b 3
+src/routes/coffees/index.tsx
+  s_b4d76b4572d43a::t_8f4b0fae29a256 2-3,6-11,13-14,16-20
+src/scenes/catalogo.scene.tsx
+  s_b4d76b4572d43a::t_a98dd6728a6c21 3-4,6,8-12,31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "5c14aefcff0ab7ec94ca633b56c5a7ccc2bd34be",
+  "prompts": {},
+  "sessions": {
+    "s_b4d76b4572d43a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "efd93bcb-6dc2-473a-b6c2-a47855ed21f1",
+        "model": "unknown"
+      },
+      "human_author": "Gabriel Ortega <gabrielon@ext.inditex.com>"
+    }
+  }
+}
