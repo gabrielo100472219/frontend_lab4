@@ -1,0 +1,63 @@
+src/app.tsx
+  s_b4d76b4572d43a::t_d6ad3be80b7b00 1-2
+src/common/components/request-status.tsx
+  s_b4d76b4572d43a::t_2622705d4d7c8d 1-7
+src/common/format.ts
+  s_b4d76b4572d43a::t_a86217e5b14b17 1
+src/core/router/router.ts
+  s_b4d76b4572d43a::t_f76df12019d484 1-10
+src/layouts/app-layout.tsx
+  s_b4d76b4572d43a::t_ff3b5f6568bfdd 1-23
+src/pods/catalogo/catalogo.component.tsx
+  s_b4d76b4572d43a::t_70ba1a6ebca65a 1-4,6-12,14,17-26,30-32,34,41,43,55,59,65-66,70
+src/pods/catalogo/catalogo.container.tsx
+  s_b4d76b4572d43a::t_5f60c035790fdc 1-32
+src/pods/catalogo/components/coffee-card.tsx
+  s_b4d76b4572d43a::t_3d7d35c59df076 1-33
+src/pods/catalogo/detalle.component.tsx
+  s_b4d76b4572d43a::t_9ef776504d9343 1-39
+src/pods/catalogo/detalle.container.tsx
+  s_b4d76b4572d43a::t_b04401b8353474 1-12
+src/pods/catalogo/index.ts
+  s_b4d76b4572d43a::t_e4cb9a29c8dba2 1-2
+src/pods/edicion/edicion.component.tsx
+  s_b4d76b4572d43a::t_446535ae5717af 3-8,48
+src/pods/edicion/edicion.container.tsx
+  s_b4d76b4572d43a::t_4e4030a8b6e131 1-50
+src/pods/edicion/index.ts
+  s_b4d76b4572d43a::t_8e2dea6c449362 1
+src/routeTree.gen.ts
+  s_b4d76b4572d43a::t_0905e727d9c842 15-16,33-42,48-49,55-56,63-64,68-73,75-87,94-95,121-134,142-143
+src/routes/__root.tsx
+  s_b4d76b4572d43a::t_c7cc5a84361f8c 1-2,5
+src/routes/coffees/$coffeeId/edit.tsx
+  s_b4d76b4572d43a::t_944fddd0834ae6 1-11
+src/routes/coffees/$coffeeId/index.tsx
+  s_b4d76b4572d43a::t_be7173713bd703 2,4,10
+src/routes/coffees/index.tsx
+  s_b4d76b4572d43a::t_11e91f3de75b99 2,5
+src/routes/coffees/new.tsx
+  s_b4d76b4572d43a::t_8ee58a758a6791 2,5
+src/scenes/catalogo.scene.tsx
+  s_b4d76b4572d43a::t_375f374196dbd4 1-15
+src/scenes/detalle.scene.tsx
+  s_b4d76b4572d43a::t_239097bf620939 1-11
+src/scenes/edicion.scene.tsx
+  s_b4d76b4572d43a::t_b95b916e44dcc5 1-33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "ca9e5bdff2413579879abc342350dd0bf8ef5e73",
+  "prompts": {},
+  "sessions": {
+    "s_b4d76b4572d43a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "efd93bcb-6dc2-473a-b6c2-a47855ed21f1",
+        "model": "unknown"
+      },
+      "human_author": "Gabriel Ortega <gabrielon@ext.inditex.com>"
+    }
+  }
+}
