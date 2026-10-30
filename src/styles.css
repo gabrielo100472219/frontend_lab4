@@ -1,0 +1,12 @@
+@import "tailwindcss" source("./");
+@layer base {
+  body { @apply min-h-screen bg-stone-100 text-stone-900 antialiased; }
+  main { @apply mx-auto max-w-4xl space-y-6 px-4 py-8 sm:px-8; }
+  h1 { @apply text-3xl font-bold tracking-tight text-stone-950; }
+  h2 { @apply text-xl font-semibold tracking-tight; }
+  label { @apply block text-sm font-semibold text-stone-700; }
+  input, select, textarea { @apply w-full min-w-0 rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-base; }
+  button { @apply cursor-pointer rounded-xl bg-amber-800 px-4 py-2 text-sm font-semibold text-white hover:bg-amber-900 disabled:cursor-not-allowed disabled:opacity-50; }
+  a { @apply font-medium text-amber-800 underline-offset-4 hover:underline; }
+  button, input, select, textarea, a { @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700; }
+}
