@@ -1,0 +1,25 @@
+src/core/cart/cart-context.ts
+  s_b4d76b4572d43a::t_ce237100d0338b 1-16
+src/core/cart/cart-provider.tsx
+  s_b4d76b4572d43a::t_777933252a23f2 1-21
+src/layouts/app-layout.tsx
+  s_b4d76b4572d43a::t_c43c7466bf205d 2-15,19-38
+src/pods/catalogo/catalogo.container.tsx
+  s_b4d76b4572d43a::t_a8496e9f89f034 3,9,28-29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "463a634eaa1a86a00d8e8ad95b37b84b6b275dcf",
+  "prompts": {},
+  "sessions": {
+    "s_b4d76b4572d43a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "efd93bcb-6dc2-473a-b6c2-a47855ed21f1",
+        "model": "unknown"
+      },
+      "human_author": "Gabriel Ortega <gabrielon@ext.inditex.com>"
+    }
+  }
+}
