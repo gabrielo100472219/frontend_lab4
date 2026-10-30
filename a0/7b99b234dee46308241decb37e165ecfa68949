@@ -1,0 +1,21 @@
+src/pods/catalogo/components/coffee-card.module.css
+  s_b4d76b4572d43a::t_004d037afb5025 1-36
+src/pods/catalogo/components/coffee-card.tsx
+  s_b4d76b4572d43a::t_aa916b5d928bbe 4,13,15,20,22,24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "a07b99b234dee46308241decb37e165ecfa68949",
+  "prompts": {},
+  "sessions": {
+    "s_b4d76b4572d43a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "efd93bcb-6dc2-473a-b6c2-a47855ed21f1",
+        "model": "unknown"
+      },
+      "human_author": "Gabriel Ortega <gabrielon@ext.inditex.com>"
+    }
+  }
+}
