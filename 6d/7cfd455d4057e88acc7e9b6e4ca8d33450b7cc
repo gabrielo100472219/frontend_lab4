@@ -1,0 +1,23 @@
+src/pods/catalogo/detalle.component.tsx
+  s_b4d76b4572d43a::t_3b9b9dad268b7c 53
+src/scenes/detalle.scene.tsx
+  s_b4d76b4572d43a::t_584a5036ebd597 13-15
+README.md
+  s_b4d76b4572d43a::t_4992e78e5b7056 1-270
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "6d7cfd455d4057e88acc7e9b6e4ca8d33450b7cc",
+  "prompts": {},
+  "sessions": {
+    "s_b4d76b4572d43a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "efd93bcb-6dc2-473a-b6c2-a47855ed21f1",
+        "model": "unknown"
+      },
+      "human_author": "Gabriel Ortega <gabrielon@ext.inditex.com>"
+    }
+  }
+}
