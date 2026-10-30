@@ -219,21 +219,7 @@ La aplicación entera, commit a commit: de O1 (tarjetas a mano) a O7 (pods y esc
 
 #### Qué corregí y por qué
 
-Al comprobar el formulario en el navegador salió un fallo de la primera versión; lo cuento justo debajo.
-
-### Dentro del prompt principal: los errores del formulario salían duplicados
-
-#### Prompt
-
-(El mismo. Comprobación de O6: enviar el formulario vacío.)
-
-#### Qué me dio
-
-El formulario de la demo adaptado, validando con el esquema en `onChange` y en `onSubmit`. Al enviarlo vacío salía «El nombre necesita al menos dos caracteres. El nombre necesita al menos dos caracteres.»
-
-#### Qué corregí y por qué
-
-`field.state.meta.errors` junta los errores de los dos validadores y, como los dos usan el mismo esquema, el mensaje aparece dos veces. Los mensajes se pasan por un `Set` antes de pintarlos.
+Nada: no tuve que cambiar nada de lo que me dio.
 
 ### Entender la sintaxis de los componentes de `app.tsx`
 
