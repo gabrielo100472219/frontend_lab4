@@ -11,6 +11,7 @@ function Layout() {
           <Link to="/coffees" activeOptions={{ exact: true }}>
             Catálogo
           </Link>
+          <Link to="/coffees/new">Añadir café</Link>
         </nav>
       </header>
       <Outlet />

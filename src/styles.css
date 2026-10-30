@@ -13,4 +13,5 @@
   [role="status"] { @apply rounded-lg bg-amber-50 px-4 py-3 text-sm text-amber-900; }
   nav a { @apply rounded-lg px-3 py-1.5 text-sm font-semibold no-underline hover:bg-amber-100; }
   nav a[data-status="active"] { @apply bg-amber-800 text-white; }
+  [aria-invalid="true"] { @apply border-rose-500 bg-rose-50; }
 }

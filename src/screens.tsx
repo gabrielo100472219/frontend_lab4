@@ -1,5 +1,7 @@
 import { useRef, useState } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
+import { saveCoffee } from "./api";
+import { CoffeeForm } from "./coffee-form";
 import { roastLabels, type Coffee } from "./model";
 import { useCoffee, useCoffees } from "./hooks";
 
@@ -139,6 +141,28 @@ export function CoffeeDetail({ id }: { id: string }) {
           </div>
         </article>
       )}
+    </>
+  );
+}
+
+export function NewCoffee() {
+  const navigate = useNavigate();
+
+  return (
+    <>
+      <header className="space-y-2">
+        <h1>Añadir café</h1>
+        <Link to="/coffees">Cancelar y volver al catálogo</Link>
+      </header>
+      <CoffeeForm
+        onSave={async (values) => {
+          const coffee = await saveCoffee(values);
+          await navigate({
+            to: "/coffees/$coffeeId",
+            params: { coffeeId: String(coffee.id) },
+          });
+        }}
+      />
     </>
   );
 }
