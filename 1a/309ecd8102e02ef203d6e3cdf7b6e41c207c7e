@@ -1,0 +1,21 @@
+src/app.tsx
+  s_b4d76b4572d43a::t_aabce859da38be 1,32-34,38-60,73-75,99-103
+src/styles.css
+  s_b4d76b4572d43a::t_77ffe2671ee038 12-13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "1a309ecd8102e02ef203d6e3cdf7b6e41c207c7e",
+  "prompts": {},
+  "sessions": {
+    "s_b4d76b4572d43a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "efd93bcb-6dc2-473a-b6c2-a47855ed21f1",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Gabriel Ortega <gabrielon@ext.inditex.com>"
+    }
+  }
+}
