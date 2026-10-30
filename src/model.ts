@@ -10,3 +10,9 @@ export interface Coffee {
 }
 
 export type CoffeeInput = Omit<Coffee, "id">;
+
+export const roastLabels: Record<Roast, string> = {
+  light: "Claro",
+  medium: "Medio",
+  dark: "Oscuro",
+};
