@@ -1,0 +1,19 @@
+src/core/cart/cart-provider.tsx
+  s_b4d76b4572d43a::t_141fa8d2b2206d 1,5-15,17-23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "06e8b16b8d171d2e2050c9c23f5b0743db3172b9",
+  "prompts": {},
+  "sessions": {
+    "s_b4d76b4572d43a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "efd93bcb-6dc2-473a-b6c2-a47855ed21f1",
+        "model": "unknown"
+      },
+      "human_author": "Gabriel Ortega <gabrielon@ext.inditex.com>"
+    }
+  }
+}
